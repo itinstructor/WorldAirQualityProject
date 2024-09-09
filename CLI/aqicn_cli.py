@@ -10,7 +10,7 @@ import aqicn_class
 import os
 
 
-# ------------------------------ MENU -------------------------------------#
+# ------------------------------ MENU ------------------------------------ #
 def menu():
     """Print menu for user, return menu choice"""
     print("", "-"*70)
@@ -21,7 +21,7 @@ def menu():
     return menu_choice
 
 
-# ---------------------- MAIN PROGRAM -------------------------------------#
+# ---------------------- MAIN PROGRAM ------------------------------------ #
 def main():
     clear_console()
     print(weather_utils.title("  World Air Quality Project App  "))

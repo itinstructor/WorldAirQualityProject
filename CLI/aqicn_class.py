@@ -21,7 +21,7 @@ class AQICNClass:
     def __init__(self):
         self.WIDTH = 27
 
-# ------------------------ GET LOCATION ------------------------------------#
+# ------------------------ GET LOCATION ----------------------------------- #
     def get_location(self):
         # Get location input from user
         try:
@@ -38,7 +38,7 @@ class AQICNClass:
             # If the status_code is 200, successful connection and data
             if (response.status_code == 200):
 
-                # Convert the JSON data into a Python dictionary with key value pairs
+                # Convert JSON data into a Python dictionary with key value pairs
                 self.data = response.json()
 
                 # Let user know the connection was successful
@@ -66,7 +66,7 @@ class AQICNClass:
             print(e)
             self.get_location()
 
-# ------------------------ GET AQI FORECAST --------------------------------#
+# ------------------------ GET AQI FORECAST ------------------------------ #
     def get_aqi_forecast(self):
         WIDTH = 4
         sensor_location = self.data.get("data").get("city").get("name")
@@ -161,6 +161,7 @@ class AQICNClass:
         # Convert to mph
         self.pressure = round(pressure * .02953, 2)
 
+# ------------------------ DISPLAY AQI ----------------------------------- #
     def display_aqi(self):
         """Print the data from dictionary created from the API data"""
         print(f'\n {self.address}')
