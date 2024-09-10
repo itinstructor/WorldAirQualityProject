@@ -3,9 +3,9 @@
     Author: William A Loring
     Created: 07/10/2021
     Purpose: Geocode using Nominatim from geopy
-    pip install geopy
 """
 
+# pip install geopy
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut, GeocoderUnavailable
 
@@ -89,7 +89,7 @@ def geocode():
             return loc.latitude, loc.longitude, loc.address
         else:
             raise ValueError("Location not found")
-        
+
         # For testing purposes
         # print(geo_location.raw)
         # print(geo_location.address)

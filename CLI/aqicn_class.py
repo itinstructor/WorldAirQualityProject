@@ -1,10 +1,11 @@
 """
-    Name: aqicn_console.py
+    Name: aqicn_class.py
     Author: William Loring
     Created: 08/06/2021
-    Purpose: World Air Quality Index
+    Purpose: World Air Quality Index class for AQICN API
 """
 
+# pip install requests
 import requests
 import api_key
 import geocode_geopy

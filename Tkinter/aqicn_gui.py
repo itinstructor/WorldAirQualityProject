@@ -6,9 +6,10 @@
     Claude AI used as a code helper
 """
 
+# pip install requests
+import requests
 import tkinter as tk
 from tkinter import ttk, scrolledtext
-import requests
 import api_key
 from geocode_geopy import geocode_arg
 import weather_utils
