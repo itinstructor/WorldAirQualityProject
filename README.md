@@ -1,8 +1,9 @@
 # World Air Quality Project App - Built in Python
 
-- CLI
-- Tkinter
-- PySide6
+- CLI (I created this program from scratch.)
+- I used Claude and Copilot to create GUI versions.
+    - Tkinter
+    - PySide6
 
 ## Purpose
 
