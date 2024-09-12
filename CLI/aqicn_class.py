@@ -70,20 +70,24 @@ class AQICNClass:
 # ------------------------ GET AQI FORECAST ------------------------------ #
     def get_aqi_forecast(self):
         WIDTH = 4
-        sensor_location = self.data.get("data").get("city").get("name")
-        forecast = self.data.get("data").get("forecast").get("daily")
+        # Get sensor location from the API response
+        sensor_location = self.data.get(
+            "data", {}).get(
+            "city", {}).get("name", "N/A")
+        # Get the forecast data from the API response
+        forecast = self.data.get("data", {}).get(
+            "forecast", {}).get("daily", {})
 
-        o3_slice = forecast.get("o3")[:]
-        pm25_slice = forecast.get("pm25")[:]
-        # if forecast.get("uvi") != None:
-        #     uvi_slice = forecast.get("uvi")[:]
-        # else:
-        #     uvi_slice = []
+        # Extract o3 (ozone) and pm25 (particulate matter) forecast data
+        o3_slice = forecast.get("o3", [])
+        pm10_slice = forecast.get("pm10", [])
+        pm25_slice = forecast.get("pm25", [])
+        uvi_slice = forecast.get("uvi", [])
 
         print(f'\n {self.address}')
         print(f' {"Sensor Location:":15} {sensor_location}')
         print("", "-"*70)
-        print(f' {"o3":>16} {" pm25":{WIDTH}} {"   uvi":{WIDTH}}')
+        print(f" {'o3':>15} {'pm10':>5} {'pm25':>5} {'uvi':>4}")
 
         # Iterate through list of dictionaries
         # for x, y, z in map(None, o3_slice, pm25_slice, uvi_slice):
@@ -91,9 +95,18 @@ class AQICNClass:
         # for x, y, z in zip(o3_slice, pm25_slice, uvi_slice):
         #     print(
         #         f'{x.get("day")}: {x.get("avg"):{WIDTH}} {y.get("avg"):{WIDTH}} {z.get("avg"):{WIDTH}} {weather_utils.uvi_to_string(z.get("avg"))}')
-        for x, y, in zip(o3_slice, pm25_slice):
-            print(
-                f'{x.get("day")}: {x.get("avg"):{WIDTH}} {y.get("avg"):{WIDTH}}')
+        for o3, pm10, pm25, uvi in zip(o3_slice, pm10_slice, pm25_slice, uvi_slice):
+
+            day = o3.get('day', 'N/A')
+            o3 = o3.get('avg', 'N/A')
+            pm10 = pm10.get('avg', 'N/A')
+            pm25 = pm25.get('avg', 'N/A')
+            uvi = uvi.get('avg', 'N/A')
+
+            # For each day in the forecast, add a line with the
+            # date, o3, pm10, pm25 and uvi average
+            result = f"{day}: {o3:>4} {pm10:> 4} {pm25:>5} {uvi:>4}"
+            print(result)
 
 # ------------------------ GET CURRENT AQI ------------------------------- #
     def get_aqi(self):

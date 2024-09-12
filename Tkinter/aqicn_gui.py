@@ -83,8 +83,6 @@ class AQICNGui:
         This method clears results display area 
         Checks if the location is available.
         If the location is available, it retrieves the AQI and displays it.
-        Returns:
-            None
         """
         # Clear the results display area
         self.results_display.delete('1.0', tk.END)
@@ -99,6 +97,7 @@ class AQICNGui:
 
 # ---------------------- GET AQI FORECAST -------------------------------- #
     def get_aqi_forecast(self):
+        """Get the AQI forecast for the given location."""
         # Clear the results display area
         self.results_display.delete('1.0', tk.END)
 
@@ -186,6 +185,11 @@ class AQICNGui:
         The forecast includes the daily average values for 
         ozone (o3) and particulate matter (pm25).
         """
+        # Get sensor location from the API response
+        sensor_location = self.data.get(
+            "data", {}).get(
+            "city", {}).get("name", "N/A")
+        
         # Get the forecast data from the API response
         forecast = self.data.get("data", {}).get(
             "forecast", {}).get("daily", {})
@@ -195,10 +199,6 @@ class AQICNGui:
         pm10_slice = forecast.get("pm10", [])
         pm25_slice = forecast.get("pm25", [])
         uvi_slice = forecast.get("uvi", [])
-
-        sensor_location = self.data.get(
-            "data", {}).get(
-            "city", {}).get("name", "N/A")
 
         # Initialize the result string with the address
         result = f"\n {self.address}\n"
@@ -210,7 +210,7 @@ class AQICNGui:
         result += f"{'-'*70}\n"
 
         # Add headers for the forecast data to the result string
-        result += f" {'o3':>15} {'pm10':>5} {'pm25':>5} {"uvi":>4}\n"
+        result += f" {'o3':>15} {'pm10':>5} {'pm25':>5} {'uvi':>4}\n"
 
         # Format the forecast data into a readable string
         for o3, pm10, pm25, uvi in zip(o3_slice, pm10_slice, pm25_slice, uvi_slice):
