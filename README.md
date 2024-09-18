@@ -1,13 +1,31 @@
 # World Air Quality Project App - Built in Python
 
+## Description
+
+This project is a demonstration of software development using Claude AI and Copilot in VSCode as code helpers. Educational GitHub users can use Copilot in VSCode for free.
+
+**Rule of thumb:** Never ask AI to do something you don't already know how to do yourself.
+
+I created the CLI version. I used Claude and Copilot to create GUI versions from the CLI code. AI created the skeleton framework of the GUI.
+
+The next step is modifying the GUI code.
+
 - CLI (I created this program from scratch.)
 - I used Claude and Copilot to create GUI versions.
-    - Tkinter
-    - PySide6
+  - Tkinter
+  - PySide6
 
-## Purpose
+## CLI
 
-Create a program using Claude and Copilot in VSCode. Educational GitHub users can use Copilot in VSCode for free.
+![CLI](./images/cli.png)
+
+## Tkinter
+
+![Tkinter](./images/tkinter.png)
+
+## PySide6
+
+![PySide6](./images/pyside6.png)
 
 ### License
 
