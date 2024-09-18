@@ -1,9 +1,12 @@
 import sys
+# pip install PySide6
 from PySide6.QtWidgets import QApplication, QMainWindow
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile
+# pip install requests
 import requests
 import api_key
+# pip install geopy
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut, GeocoderUnavailable
 import weather_utils
