@@ -178,19 +178,20 @@ class AQICNClass:
 # ------------------------ DISPLAY AQI ----------------------------------- #
     def display_aqi(self):
         """Print the data from dictionary created from the API data"""
-        print(f'\n {self.address}')
-        print(f' {"Sensor Location:":15} {self.sensor_location}')
-        print("", "-"*70)
-        print(f' {"AQI:":{self.WIDTH}} {self.aqi} {self.aqi_string}')
-        print(f' {"Dominant Pollutant:":{self.WIDTH}} {self.dom_pol}')
-        print(f' {"Ozone (O₃):":{self.WIDTH}} {self.o3}')
-        print(f' {"Fine Particulates (PM25):":{self.WIDTH}} {self.pm25}')
-        print(f' {"Coarse Particulates (PM10):":{self.WIDTH}} {self.pm10}')
-        print(f' {"Carbon Monoxide (CO):":{self.WIDTH}} {self.co}')
-        print(f' {"Sulfur Dioxide (SO₂):":{self.WIDTH}} {self.so2}')
-        print(f' {"Nitrogen Dioxide (NO₂):":{self.WIDTH}} {self.no2}')
-        print(f' {"UV Index:":{self.WIDTH}} {self.uvi} {self.uvi_string}')
-        print(f' {"Temperature:":{self.WIDTH}} {self.temperature}°F')
-        print(f' {"Humidity:":{self.WIDTH}} {self.humidity}%')
-        print(f' {"Wind Speed:":{self.WIDTH}} {self.wind_speed_mph} mph')
-        print(f' {"Pressure:":{self.WIDTH}} {self.pressure} inHg')
+        result = f"\n {self.address}\n"
+        result += f" {'Sensor Location:':<15} {self.sensor_location}\n"
+        result += f"{'-'*70}\n"
+        result += f" {'AQI:':>27} {self.aqi} {self.aqi_string}\n"
+        result += f" {'Dominant Pollutant:':>27} {self.dom_pol}\n"
+        result += f" {'Ozone (O₃):':>27} {self.o3}\n"
+        result += f" {'Fine Particulates (PM25):':>27} {self.pm25}\n"
+        result += f" {'Coarse Particulates (PM10):':>27} {self.pm10}\n"
+        result += f" {'Carbon Monoxide (CO):':>27} {self.co}\n"
+        result += f" {'Sulfur Dioxide (SO₂):':>27} {self.so2}\n"
+        result += f" {'Nitrogen Dioxide (NO₂):':>27} {self.no2}\n"
+        result += f" {'UV Index:':>27} {self.uvi} {self.uvi_string}\n"
+        result += f" {'Temperature:':>27} {self.temperature}°F\n"
+        result += f" {'Humidity:':>27} {self.humidity}%\n"
+        result += f" {'Wind Speed:':>27} {self.wind_speed_mph} mph\n"
+        result += f" {'Pressure:':>27} {self.pressure} inHg\n"
+        print(result)
