@@ -206,8 +206,7 @@ class AQICNGui(QMainWindow, Ui_MainWindow):
         uvi_slice = forecast.get("uvi", [])
 
         result = f"\n {self.address}\n"
-        result += f" {'Sensor Location:':<15} {self.data.get(
-            'data', {}).get('city', {}).get('name', 'N/A')}\n"
+        result += f" {'Sensor Location:':<15} {self.data.get('data', {}).get('city', {}).get('name', 'N/A')}\n"
         result += f"{'-'*70}\n"
         result += f" {'o3':>15} {'pm10':>5} {'pm25':>5} {'uvi':>4}\n"
 
@@ -228,6 +227,7 @@ class AQICNGui(QMainWindow, Ui_MainWindow):
 
 def main():
     app = QApplication(sys.argv)
+    app.setStyle('Fusion')
     window = AQICNGui()
     window.show()
     sys.exit(app.exec())
