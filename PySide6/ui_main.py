@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(600, 750)
+        MainWindow.resize(581, 544)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -102,8 +102,11 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"World Air Quality Index", None))
         self.locationGroupBox.setTitle(QCoreApplication.translate("MainWindow", u"Location Input", None))
         self.cityLabel.setText(QCoreApplication.translate("MainWindow", u"City:", None))
+        self.cityLineEdit.setText(QCoreApplication.translate("MainWindow", u"Scottsbluff", None))
         self.stateLabel.setText(QCoreApplication.translate("MainWindow", u"State:", None))
+        self.stateLineEdit.setText(QCoreApplication.translate("MainWindow", u"NE", None))
         self.countryLabel.setText(QCoreApplication.translate("MainWindow", u"Country:", None))
+        self.countryLineEdit.setText(QCoreApplication.translate("MainWindow", u"US", None))
         self.currentAQIButton.setText(QCoreApplication.translate("MainWindow", u"Get Current AQI", None))
         self.aqiForecastButton.setText(QCoreApplication.translate("MainWindow", u"Get AQI Forecast", None))
     # retranslateUi
