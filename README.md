@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is a demonstration of software development using Claude AI and Copilot in VSCode as code helpers. Educational GitHub users can use Copilot in VSCode for free.
+This project is a demonstration for a WNCC Computer Science class of software development using Claude AI and Copilot in VSCode as code helpers. Educational GitHub users can use Copilot in VSCode for free.
 
 **Rule of thumb:** Never ask AI to do something you don't already know how to do yourself.
 
