@@ -90,7 +90,7 @@
      <widget class="QTextEdit" name="resultsTextEdit">
       <property name="font">
        <font>
-        <family>Courier New</family>
+        <family>Consolas</family>
         <pointsize>10</pointsize>
        </font>
       </property>

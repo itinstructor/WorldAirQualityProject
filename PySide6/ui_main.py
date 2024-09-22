@@ -85,7 +85,7 @@ class Ui_MainWindow(object):
         self.resultsTextEdit = QTextEdit(self.centralwidget)
         self.resultsTextEdit.setObjectName(u"resultsTextEdit")
         font = QFont()
-        font.setFamilies([u"Courier New"])
+        font.setFamilies([u"Consolas"])
         font.setPointSize(10)
         self.resultsTextEdit.setFont(font)
 
